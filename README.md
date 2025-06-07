@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-ls -a 
+ls 
 ```
