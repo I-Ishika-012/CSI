@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-touch welcome.txt
+rm welcome.txt
 ```
