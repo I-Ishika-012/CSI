@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-mkdir secret
+mkdir -p parent/child
 ```
