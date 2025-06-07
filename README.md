@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-touch sample.txt
+ls sample.txt
 ```
