@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-ls sample.txt
+chmod u+x sample.txt
 ```
