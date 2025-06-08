@@ -2,34 +2,34 @@
 Repository for CSI assignments/projects
 
 ```
-git reset --soft HEAD~1
-git reset --mixed HEAD~1
-git reset --hard HEAD~1
+mkdir git-merge-demo && cd git-merge-demo
+git init
+echo "Line 1" > file.txt
+git add file.txt
+git commit -m "Initial commit"
 ```
 
 ```
-git reset --hard HEAD~1
-git push --force
-```
-
-```
-echo "This is a feature file." > feature.txt
-git add feature.txt
-git commit -m "Add feature.txt in feature-branch"
-```
-
-```
-git remote add origin /bare-repo.git
-git push origin feature-branch
+git checkout -b branch-a
 ```
 
 ```
 git checkout master
-git pull origin master       # make sure master is up to date
-git merge feature-branch     # merges the branch
+echo "Change from master" >> file.txt
+git add file.txt
+git commit -m "Update from master"
 ```
 
 ```
-git merge feature-branch
-git push origin master
+git merge branch-a
+```
+
+```
+cat file.txt
+echo -e "Line 1\nChange from master and branch A" > file.txt
+```
+
+```
+git add file.txt
+git commit -m "Resolve merge conflict between master and branch-a"
 ```
