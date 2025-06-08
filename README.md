@@ -1,5 +1,6 @@
 # CSI
 Repository for CSI assignments/projects
 
-`ls file007
+```
+ls file007
 ```
