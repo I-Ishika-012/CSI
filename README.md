@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-passwd thatuser
+id thatuser
 ```
