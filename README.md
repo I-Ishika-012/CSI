@@ -2,11 +2,14 @@
 Repository for CSI assignments/projects
 
 ```
-gh pr create --base main --head your-branch-name --title "PR Title" --body "My first PR"
+git reset --soft HEAD~1
+git reset --mixed HEAD~1
+git reset --hard HEAD~1
 ```
 
 ```
-git checkout -b feature-branch
+git reset --hard HEAD~1
+git push --force
 ```
 
 ```
