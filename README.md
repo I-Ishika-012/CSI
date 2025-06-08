@@ -27,5 +27,6 @@ git merge feature-branch     # merges the branch
 ```
 
 ```
+git merge feature-branch
 git push origin master
 ```
