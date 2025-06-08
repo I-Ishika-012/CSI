@@ -2,34 +2,30 @@
 Repository for CSI assignments/projects
 
 ```
-mkdir git-merge-demo && cd git-merge-demo
-git init
-echo "Line 1" > file.txt
-git add file.txt
-git commit -m "Initial commit"
+git log --oneline --graph --all
 ```
 
 ```
-git checkout -b branch-a
+git diff HEAD~1 HEAD
 ```
 
 ```
-git checkout master
-echo "Change from master" >> file.txt
-git add file.txt
-git commit -m "Update from master"
+git stash
 ```
 
 ```
-git merge branch-a
+git stash pop
 ```
 
 ```
-cat file.txt
-echo -e "Line 1\nChange from master and branch A" > file.txt
+git reset HEAD filename
 ```
 
 ```
-git add file.txt
-git commit -m "Resolve merge conflict between master and branch-a"
+git commit --amend
+```
+
+```
+gh issue list
+gh issue view 123
 ```
