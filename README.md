@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-id thatuser
+ usermod -aG thatuser
 ```
