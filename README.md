@@ -2,47 +2,26 @@
 Repository for CSI assignments/projects
 
 ```
-git init
+mkdir -p ~/git-remotes/myproject.git
+cd ~/git-remotes/myproject.git
+git init --bare
 ```
 
 ```
-git clone https://github.com/username/project.git
+cd ~
+git clone ~/git-remotes/myproject.git myproject
+cd myproject
 ```
 
 ```
-git status
+echo "Hello Git from local remote!" > hello.txt
 ```
 
 ```
-git add index.html
+git add hello.txt
+git commit -m "Initial commit with hello.txt"
 ```
 
 ```
-git commit -m "initial commit"
+git push origin master
 ```
-
-```
-git log
-```
-
-```
-git push origin main
-```
-
-```
-git pull origin main
-```
-
-```
-git branch feature-branch
-```
-
-```
-git checkout feature-branch
-```
-
-```
-git rm index.html
-```
-
-v
