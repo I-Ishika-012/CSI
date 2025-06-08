@@ -2,24 +2,33 @@
 Repository for CSI assignments/projects
 
 ```
-mkdir -p ~/git-remotes/myproject.git
-cd ~/git-remotes/myproject.git
-git init --bare
+mkdir myrepo
+cd myrepo
+git init
+echo "Main content" > main.txt
+git add main.txt
+git commit -m "Initial commit on master"
 ```
 
 ```
-cd ~
-git clone ~/git-remotes/myproject.git myproject
-cd myproject
+git checkout -b feature-branch
 ```
 
 ```
-echo "Hello Git from local remote!" > hello.txt
+echo "This is a feature file." > feature.txt
+git add feature.txt
+git commit -m "Add feature.txt in feature-branch"
 ```
 
 ```
-git add hello.txt
-git commit -m "Initial commit with hello.txt"
+git remote add origin /bare-repo.git
+git push origin feature-branch
+```
+
+```
+git checkout master
+git pull origin master       # make sure master is up to date
+git merge feature-branch     # merges the branch
 ```
 
 ```
