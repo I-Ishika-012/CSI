@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-pwd
+cd /mnt/host/d/Ishika
 ```
