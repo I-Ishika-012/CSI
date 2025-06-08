@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-mkdir file001 file007
+touch 001.txt
 ```
