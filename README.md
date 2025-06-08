@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-cd practice 
+mkdir file001 file007
 ```
