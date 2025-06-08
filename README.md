@@ -2,12 +2,7 @@
 Repository for CSI assignments/projects
 
 ```
-mkdir myrepo
-cd myrepo
-git init
-echo "Main content" > main.txt
-git add main.txt
-git commit -m "Initial commit on master"
+gh pr create --base main --head your-branch-name --title "PR Title" --body "My first PR"
 ```
 
 ```
