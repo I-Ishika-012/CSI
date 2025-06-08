@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
- mv 001.txt ../file007/
+ cd ..
 ```
