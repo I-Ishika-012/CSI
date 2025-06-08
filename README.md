@@ -2,5 +2,5 @@
 Repository for CSI assignments/projects
 
 ```
-groupadd thisgroup
+useradd -m -G mygroup -s /bin/bash newuser
 ```
