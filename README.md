@@ -4,36 +4,48 @@ Repository for CSI assignments/projects
 #### Week - 1 : [Assignment 1](https://github.com/I-Ishika-012/CSI/blob/main/Week1/Assignment%201.pdf)
 
 ```
-# HUB - Management VNet
-az network vnet create \
+# Peer Management → Production
+az network vnet peering create \
+  --name MgmtToProd \
   --resource-group NetInfraRG \
-  --name ManagementVNet \
-  --address-prefix 10.1.0.0/16 \
-  --subnet-name mgmt-subnet \
-  --subnet-prefix 10.1.0.0/24
+  --vnet-name ManagementVNet \
+  --remote-vnet ProductionVNet \
+  --allow-vnet-access
 
-# SPOKE 1 - Production
-az network vnet create \
+az network vnet peering create \
+  --name ProdToMgmt \
   --resource-group NetInfraRG \
-  --name ProductionVNet \
-  --address-prefix 10.2.0.0/16 \
-  --subnet-name prod-subnet \
-  --subnet-prefix 10.2.0.0/24
+  --vnet-name ProductionVNet \
+  --remote-vnet ManagementVNet \
+  --allow-vnet-access
 
-# SPOKE 2 - Testing
-az network vnet create \
+# Management → Testing
+az network vnet peering create \
+  --name MgmtToTest \
   --resource-group NetInfraRG \
-  --name TestingVNet \
-  --address-prefix 10.3.0.0/16 \
-  --subnet-name test-subnet \
-  --subnet-prefix 10.3.0.0/24
+  --vnet-name ManagementVNet \
+  --remote-vnet TestingVNet \
+  --allow-vnet-access
 
-# SPOKE 3 - Development
-az network vnet create \
+az network vnet peering create \
+  --name TestToMgmt \
   --resource-group NetInfraRG \
-  --name DevVNet \
-  --address-prefix 10.4.0.0/16 \
-  --subnet-name dev-subnet \
-  --subnet-prefix 10.4.0.0/24
+  --vnet-name TestingVNet \
+  --remote-vnet ManagementVNet \
+  --allow-vnet-access
 
+# Management → Development
+az network vnet peering create \
+  --name MgmtToDev \
+  --resource-group NetInfraRG \
+  --vnet-name ManagementVNet \
+  --remote-vnet DevVNet \
+  --allow-vnet-access
+
+az network vnet peering create \
+  --name DevToMgmt \
+  --resource-group NetInfraRG \
+  --vnet-name DevVNet \
+  --remote-vnet ManagementVNet \
+  --allow-vnet-access
 ```
