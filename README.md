@@ -4,48 +4,44 @@ Repository for CSI assignments/projects
 #### Week - 1 : [Assignment 1](https://github.com/I-Ishika-012/CSI/blob/main/Week1/Assignment%201.pdf)
 
 ```
-# Peer Management → Production
-az network vnet peering create \
-  --name MgmtToProd \
+# VM in Management VNet
+az vm create \
   --resource-group NetInfraRG \
+  --name MgmtVM \
   --vnet-name ManagementVNet \
-  --remote-vnet ProductionVNet \
-  --allow-vnet-access
+  --subnet mgmt-subnet \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
 
-az network vnet peering create \
-  --name ProdToMgmt \
+# Production VM
+az vm create \
   --resource-group NetInfraRG \
+  --name ProdVM \
   --vnet-name ProductionVNet \
-  --remote-vnet ManagementVNet \
-  --allow-vnet-access
+  --subnet prod-subnet \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
 
-# Management → Testing
-az network vnet peering create \
-  --name MgmtToTest \
+# Testing VM
+az vm create \
   --resource-group NetInfraRG \
-  --vnet-name ManagementVNet \
-  --remote-vnet TestingVNet \
-  --allow-vnet-access
-
-az network vnet peering create \
-  --name TestToMgmt \
-  --resource-group NetInfraRG \
+  --name TestVM \
   --vnet-name TestingVNet \
-  --remote-vnet ManagementVNet \
-  --allow-vnet-access
+  --subnet test-subnet \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
 
-# Management → Development
-az network vnet peering create \
-  --name MgmtToDev \
+# Development VM
+az vm create \
   --resource-group NetInfraRG \
-  --vnet-name ManagementVNet \
-  --remote-vnet DevVNet \
-  --allow-vnet-access
-
-az network vnet peering create \
-  --name DevToMgmt \
-  --resource-group NetInfraRG \
+  --name DevVM \
   --vnet-name DevVNet \
-  --remote-vnet ManagementVNet \
-  --allow-vnet-access
+  --subnet dev-subnet \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
+
 ```
