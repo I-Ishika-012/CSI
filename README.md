@@ -5,6 +5,4 @@ Repository for CSI assignments/projects
 
 #### Week - 2 : [Assignment 2](https://github.com/I-Ishika-012/CSI/blob/main/Week2/Assignment%202.pdf)
 
-```
-(Get-AzPublicIpAddress -Name $ipName -ResourceGroupName $resourceGroup).IpAddress
-```
+#### Week - 3 : 
