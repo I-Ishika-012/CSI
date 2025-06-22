@@ -6,5 +6,6 @@ Repository for CSI assignments/projects
 #### Week - 2 : [Assignment 2](https://github.com/I-Ishika-012/CSI/blob/main/Week2/Assignment%202.pdf)
 
 ```
-$publicIP = New-AzPublicIpAddress -Name $ipName -ResourceGroupName $resourceGroup -Location $location -AllocationMethod Dynamic
+$nsgRule = New-AzNetworkSecurityRuleConfig -Name "Allow-SSH" -Protocol Tcp -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * -DestinationPortRange 22 -Access Allow
+$nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup -Location $location -Name $nsgName -SecurityRules $nsgRule
 ```
