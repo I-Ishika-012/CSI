@@ -9,4 +9,5 @@ Repository for CSI assignments/projects
 
 #### Week - 4 : [Assignment 4](https://github.com/I-Ishika-012/CSI/blob/main/Week4/Assignment%204.pdf)
 
-#### Week - 5 : [Assignment 5](https://github.com/I-Ishika-012/CSI/blob/main/Week4/Assignment%204.pdf)
+#### Week - 5 : [Assignment 5]([https://github.com/I-Ishika-012/CSI/blob/main/Week4/Assignment%204.pdf](https://github.com/I-Ishika-012/CSI/blob/main/Week5/Assignmen5.pdf))
+
