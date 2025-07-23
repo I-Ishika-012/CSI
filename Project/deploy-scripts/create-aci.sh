@@ -19,3 +19,5 @@ az container create \
   --restart-policy Never \
   --query "{FQDN:ipAddress.fqdn}" \
   --output table
+
+##execution code : chmod +x deploy-scripts/create-aci.sh
