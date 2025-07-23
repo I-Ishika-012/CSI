@@ -1,0 +1,51 @@
+trigger:
+  - main
+
+variables:
+  azureSubscription: 'FinanceApp-AzureConnection'  # Service connection name
+  resourceGroup: 'financeapp-rg'
+  containerName: 'financeapp-test-api'
+  imageName: 'financeapp-api'
+  location: 'centralindia'
+  containerRegistry: 'financeappregistry.azurecr.io'
+  containerPort: '8080'
+
+stages:
+  - stage: Build
+    displayName: Build Docker Image
+    jobs:
+      - job: BuildImage
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: Docker@2
+            inputs:
+              containerRegistry: '$(azureSubscription)'
+              repository: '$(imageName)'
+              command: 'buildAndPush'
+              Dockerfile: '**/Dockerfile'
+              tags: |
+                latest
+
+  - stage: Deploy
+    displayName: Deploy to Azure Container Instance
+    dependsOn: Build
+    jobs:
+      - job: DeployACI
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: '$(azureSubscription)'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az container create \
+                  --resource-group $(resourceGroup) \
+                  --name $(containerName) \
+                  --image $(containerRegistry)/$(imageName):latest \
+                  --dns-name-label financeapp-api-ci \
+                  --ports $(containerPort) \
+                  --location $(location) \
+                  --restart-policy Never
