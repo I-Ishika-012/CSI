@@ -34,7 +34,7 @@ docker build -t financeapp-api:latest ./app
 docker run -p 8080:8080 financeapp-api
 ```
 
-## 🧪 Live Test Endpoints
+## Live Test Endpoints
 - `/` — Returns welcome text
 - `/health` — Returns app health status
   
