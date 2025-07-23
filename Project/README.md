@@ -20,7 +20,7 @@ A leading finance company needed a reliable non-production environment to test c
 3. **Test** (Optional) - Integration testing via scripts or frameworks
 
 ## Architecture Diagram
-![architecture](architecture.png)
+![architecture](https://github.com/I-Ishika-012/CSI/blob/main/Project/architectiure.png)
 
 ## Setup Instructions
 1. Fork this repo
