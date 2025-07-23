@@ -1,7 +1,7 @@
 # Azure DevOps + ACI Deployment Automation
 
 ## Overview
-This project demonstrates how to automate the deployment of a containerized application to Azure Container Instances (ACI) using Azure DevOps CI/CD pipelines.
+This project demonstrates how to automate the deployment of a containerized application (made in Flask-Python) to Azure Container Instances (ACI) using Azure DevOps CI/CD pipelines.
 
 ## Tech Stack
 - Azure DevOps
@@ -9,6 +9,7 @@ This project demonstrates how to automate the deployment of a containerized appl
 - Azure CLI
 - Docker
 - YAML Pipelines
+- Python (Flask)
 
 ## Business Problem
 A leading finance company needed a reliable non-production environment to test containerized applications without affecting production. This project implements that using Azure ACI + DevOps pipelines.
@@ -27,6 +28,16 @@ A leading finance company needed a reliable non-production environment to test c
 3. Update variables in `azure-pipelines.yml`
 4. Push to trigger CI/CD
 
-## 📎 Resources
+## Build & Run Locally
+```bash
+docker build -t financeapp-api:latest ./app
+docker run -p 8080:8080 financeapp-api
+```
+
+## 🧪 Live Test Endpoints
+- `/` — Returns welcome text
+- `/health` — Returns app health status
+  
+## Resources
 - `azure-pipelines.yml`: Core deployment logic
 - `deploy-scripts/`: ACI provisioning scripts
