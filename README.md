@@ -15,4 +15,6 @@ Repository for CSI assignments/projects
 
 #### Week - 7 : [Assignment 7](https://github.com/I-Ishika-012/CSI/blob/main/Week7/Assignment7.pdf)
 
+#### Week - 8: [Assignment 8](https://github.com/I-Ishika-012/CSI/blob/main/Week8/Assignment8.pdf)
+
 #### Project : [Final Project](https://github.com/I-Ishika-012/CSI/tree/main/Project)
